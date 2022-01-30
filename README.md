@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# Advance Hooks and Custom Hooks
+It is to demostrate how few advanced hooks works like useRef, forwardRef, useCallback, useMemo and few custom hooks i.e useLocalStorage and useUpdateLogger
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## useRef
+1) It is mainly used to store reference of element
+2) Changes to useRef doesn't re-render
 
-## Available Scripts
+## useMemo
+1) It is used to memorise the previous values i.e caching data so we don't recompute it for every single render 
+2) It is mainly used when functions we are calling is incredibly slow
+3) It is also used for referencial equivalent
 
-In the project directory, you can run:
+## useCallback
+1) It is used to create and store a function when ever there is a change in function defination
+2) It is mainly used when creation of funtion in taking time and for maintaining referential equality
 
-### `npm start`
+## forwardRef
+1) When we want to pass reference to html element through react component
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## useLocalStorage
+I have used useState to implement it. It tries to get value if there is any value in localStorage and stores it in state variable if there is no value already present then it stores inital value and also if there is any change in value of localStorage variable it is stored to localStorage.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## useUpdateLogger
+When ever the value which is passed to updateLogger changes this hook logs the changed value in console
